@@ -9,4 +9,20 @@ import { MenuComponent } from './menu/menu.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+  onGameStarted() {
+    console.log('El juego ha comenzado');
+  }
+
+  onShowScores() {
+    console.log('Mostrando puntajes');
+  }
+
+  onOpenSettings() {
+    console.log('Abriendo configuraciones');
+  }
+
+  onExitGame() {
+    console.log('Saliendo del juego');
+  }
+}
