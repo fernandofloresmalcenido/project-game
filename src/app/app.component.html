@@ -1,12 +1,1 @@
-<div class="container">
-  <img src="../assets/logo.png" alt="Simon says" />
-
-  <app-menu
-    [title]="'Menu'"
-    (gameStarted)="onGameStarted()"
-    (scoresRequested)="onShowScores()"
-    (settingsOpened)="onOpenSettings()"
-    (gameExited)="onExitGame()"
-  >
-  </app-menu>
-</div>
+<router-outlet></router-outlet>

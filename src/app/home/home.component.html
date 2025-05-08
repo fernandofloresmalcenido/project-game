@@ -1,0 +1,12 @@
+<div class="container">
+  <img src="../assets/logo.png" alt="Simon says" />
+
+  <app-menu
+    [title]="'Menu'"
+    (gameStarted)="goToGameplay()"
+    (scoresRequested)="onShowScores()"
+    (settingsOpened)="onOpenSettings()"
+    (gameExited)="exitGame()"
+  >
+  </app-menu>
+</div>

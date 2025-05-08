@@ -1,15 +1,20 @@
 import { Routes } from '@angular/router';
-import { GameplayComponent } from './gameplay/gameplay.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: GameplayComponent,
+        component: HomeComponent,
     },
     {
         path: 'gameplay',
         loadComponent: () => import('./gameplay/gameplay.component').then(
             m => m.GameplayComponent
         ),
+    },
+    {
+        path: '**',
+        component: PageNotFoundComponent,
     },
 ];
