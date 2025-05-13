@@ -1,6 +1,6 @@
 <div class="game-over-container">
     <div class="logo">
-        <img src="../assets/logo.png" alt="Simon Says Logo" class="logo" />
+        <img src="../assets/logo.png" alt="Simon Says Logo" class="logo-img" />
     </div>
     <div class="game-over-content">
         <div class="game-over-text">
@@ -8,19 +8,19 @@
             <span class="blue">A</span>
             <span class="green">M</span>
             <span class="yellow">E</span>
-            &nbsp;
+            <span>&nbsp;</span>
             <span class="red">O</span>
             <span class="blue">V</span>
             <span class="green">E</span>
             <span class="yellow">R</span>
         </div>
         <div class="stats">
-            <div class="rounds">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#f2bd22" d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
-                Rounds: {{ currentRounds }}
-            </div>
             <div class="record">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#f2bd22" d="M0 224c0 17.7 14.3 32 32 32s32-14.3 32-32c0-53 43-96 96-96l160 0 0 32c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-9.2-9.2-22.9-11.9-34.9-6.9S320 19.1 320 32l0 32L160 64C71.6 64 0 135.6 0 224zm512 64c0-17.7-14.3-32-32-32s-32 14.3-32 32c0 53-43 96-96 96l-160 0 0-32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6l0-32 160 0c88.4 0 160-71.6 160-160z"/></svg>
+                Rounds: {{ currentRounds }}
+            </div>
+            <div class="rounds">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#f2bd22" d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
                 Record: {{ record }}
             </div>
         </div>
