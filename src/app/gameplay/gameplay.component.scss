@@ -1,5 +1,6 @@
 .game-container {
     display: flex;
+    flex-direction: row; /* Escritorio: horizontal */
     align-items: center;
     justify-content: center;
     gap: 10rem;
@@ -7,6 +8,8 @@
     background-color: #1c2a44;
     color: white;
     font-family: 'Capriola', sans-serif;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .game-header {
@@ -39,6 +42,7 @@ h2 {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     margin-top: 0.5rem;
+    border: 2px solid #ffd700;
 }
 
 .simon-board {
@@ -110,11 +114,11 @@ button {
     cursor: pointer;
     font-size: 1rem;
     color: #1c2a44;
+}
 
-    &:disabled {
-        background-color: #666;
-        cursor: not-allowed;
-    }
+button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
 }
 
 .repeat-button {
@@ -133,9 +137,92 @@ button {
     align-items: center;
     gap: 12px;
     font-size: 2rem;
+}
 
-    &:disabled {
-        background-color: #666;
-        cursor: not-allowed;
+.repeat-button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+/* Ajustes para tablet (≤1024px) */
+@media (max-width: 1024px) {
+    .game-container {
+        flex-direction: column; /* Vertical para tablet */
+        gap: 2rem;
+    }
+
+    .game-header {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .logo {
+        max-width: 360px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .round {
+        font-size: 1.3rem;
+    }
+
+    .simon-board {
+        width: 350px;
+        height: 350px;
+    }
+
+    .center-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .repeat-button {
+        font-size: 1.5rem;
+    }
+}
+
+/* Ajustes para móvil (≤480px) */
+@media (max-width: 480px) {
+    .game-container {
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .game-header {
+        max-width: 300px;
+    }
+
+    .logo {
+        max-width: 280px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .round {
+        font-size: 1rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .simon-board {
+        width: 250px;
+        height: 250px;
+        border: 8px solid #000;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .center-circle {
+        width: 90px;
+        height: 90px;
+        border: 3px solid #333;
+    }
+
+    .repeat-button {
+        font-size: 1.2rem;
+        gap: 8px;
     }
 }
