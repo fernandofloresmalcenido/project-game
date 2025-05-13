@@ -20,7 +20,7 @@ export class GameplayComponent implements OnInit {
   repeatCount: number = 3;
   hasUserStarted: boolean = false;
 
-  constructor(private router: Router, private gameService: GameService) {}
+  constructor(private router: Router, private gameService: GameService) { }
 
   ngOnInit() {
     this.startGame();
@@ -59,11 +59,8 @@ export class GameplayComponent implements OnInit {
   }
 
   highlightButton(color: string) {
-    const button = document.querySelector(`.${color}`) as HTMLElement | null;
-    if (!button) {
-      console.error(`Botón ${color} no encontrado`);
-      return;
-    }
+    const button = document.querySelector(`.${color}`) as HTMLElement;
+    
     const originalColor = button.style.backgroundColor;
     button.style.backgroundColor = this.lightenColor(color);
     setTimeout(() => {
@@ -88,19 +85,19 @@ export class GameplayComponent implements OnInit {
   }
 
   buttonClicked(color: string) {
-    if (this.isPlaying) return;
-    if (!this.hasUserStarted) {
-      this.hasUserStarted = true;
+    if (!this.isPlaying) {
+      if (!this.hasUserStarted) {
+        this.hasUserStarted = true;
+      }
+      this.userSequence.push(color);
+      this.checkSequence();
     }
-    this.userSequence.push(color);
-    this.checkSequence();
   }
 
   checkSequence() {
     const index = this.userSequence.length - 1;
     if (this.userSequence[index] !== this.sequence[index]) {
       this.gameService.setRecord(this.round - 1);
-      // Navegar a la ruta /game-over y pasar las rondas actuales en el estado
       this.router.navigate(['/game-over'], { state: { currentRounds: this.round - 1 } });
       return;
     }

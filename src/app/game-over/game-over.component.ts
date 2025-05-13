@@ -18,7 +18,7 @@ export class GameOverComponent implements OnInit {
     // Obtener las rondas actuales desde el estado de la navegación
     const navigation = this.router.getCurrentNavigation();
     this.currentRounds = navigation?.extras?.state?.['currentRounds'] || 0;
-    // Obtener el récord desde el servicio
+    
     this.record = this.gameService.getRecord();
   }
 
@@ -27,6 +27,6 @@ export class GameOverComponent implements OnInit {
   }
 
   emitTryAgain() {
-    this.router.navigate(['/game']);
+    this.router.navigate(['/gameplay']);
   }
 }
