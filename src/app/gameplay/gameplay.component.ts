@@ -60,7 +60,7 @@ export class GameplayComponent implements OnInit {
 
   highlightButton(color: string) {
     const button = document.querySelector(`.${color}`) as HTMLElement;
-    
+
     const originalColor = button.style.backgroundColor;
     button.style.backgroundColor = this.lightenColor(color);
     setTimeout(() => {
@@ -69,7 +69,7 @@ export class GameplayComponent implements OnInit {
   }
 
   lightenColor(color: string): string {
-    const lightenFactor = 0.5;
+    const lightenFactor = 0.65;
     switch (color) {
       case 'red':
         return `rgb(255, ${Math.min(255, 255 * lightenFactor)}, ${Math.min(255, 255 * lightenFactor)})`;
