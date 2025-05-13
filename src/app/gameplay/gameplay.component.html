@@ -1,1 +1,25 @@
-<p>gameplay works!</p>
+<div class="game-container">
+  <div class="game-header">
+    <img src="../assets/logo.png" alt="Simon Says Logo" class="logo" />
+    <div class="text-info">
+      <h2>It's time to play!</h2>
+      <div class="round">Round: {{ round }}</div>
+    </div>
+  </div>
+  <div class="simon-board">
+    <div class="button red" (click)="buttonClicked('red')"></div>
+    <div class="button blue" (click)="buttonClicked('blue')"></div>
+    <div class="button green" (click)="buttonClicked('green')"></div>
+    <div class="button yellow" (click)="buttonClicked('yellow')"></div>
+    <div class="center-circle">
+      <button
+        (click)="repeatSequence()"
+        [disabled]="repeatCount === 0 || isPlaying || hasUserStarted"
+        class="repeat-button"
+      >
+        <i class="fas fa-repeat"></i>
+        <span class="repeat-count">{{ repeatCount }}</span>
+      </button>
+    </div>
+  </div>
+</div>

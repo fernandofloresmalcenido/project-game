@@ -1,0 +1,133 @@
+.game-over-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1a2a44;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.game-over-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 30%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.logo img {
+  width: 80%;
+}
+
+h1 {
+  margin-left: 20px;
+  font-size: 40px;
+  color: #ffd700;
+}
+
+.game-over-text {
+  font-size: 48px;
+  font-weight: bold;
+  border: 4px solid #ffd700;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.red {
+  color: #cd011a;
+}
+
+.blue {
+  color: #35a6ec;
+}
+
+.green {
+  color: #4e9512;
+}
+
+.yellow {
+  color: #ffd700;
+}
+
+.stats {
+  margin: 20px 0;
+  font-size: 32px;
+}
+
+.stats div {
+  margin: 12px 0;
+}
+
+.rounds {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.record {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.rounds svg,
+.record svg {
+  width: 30px;
+  height: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 32px;
+}
+
+.exit-btn, .try-again-btn {
+  background-color: #cd011a;
+  color: #1a2a44;
+  border: none;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.try-again-btn {
+  background-color: #4e9512; 
+}
+
+.exit-btn:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.try-again-btn:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.exit-btn:active, .try-again-btn:active {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); 
+  transform: scale(0.95); 
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+}
