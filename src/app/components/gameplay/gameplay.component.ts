@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { GameService } from '../game.service';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-gameplay',
