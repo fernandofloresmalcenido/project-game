@@ -96,12 +96,13 @@ export class GameplayComponent implements OnInit {
 
   checkSequence() {
     const index = this.userSequence.length - 1;
+    let isCorrect : boolean = true;
     if (this.userSequence[index] !== this.sequence[index]) {
       this.gameService.setRecord(this.round - 1);
       this.router.navigate(['/game-over'], { state: { currentRounds: this.round - 1 } });
-      return;
+      isCorrect = false;
     }
-    if (this.userSequence.length === this.sequence.length) {
+    if (isCorrect && this.userSequence.length === this.sequence.length) {
       setTimeout(() => this.nextRound(), 500);
     }
   }
