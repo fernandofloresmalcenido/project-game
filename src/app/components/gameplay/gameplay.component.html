@@ -7,10 +7,38 @@
     </div>
   </div>
   <div class="simon-board">
-    <div class="button red" (click)="buttonClicked('red')"></div>
-    <div class="button blue" (click)="buttonClicked('blue')"></div>
-    <div class="button green" (click)="buttonClicked('green')"></div>
-    <div class="button yellow" (click)="buttonClicked('yellow')"></div>
+    <button
+      class="button red"
+      (click)="buttonClicked('red')"
+      (keyup)="handleKeyUp($event, 'red')"
+      tabindex="0"
+    >
+      <span class="visually-hidden">Red</span>
+    </button>
+    <button
+      class="button blue"
+      (click)="buttonClicked('blue')"
+      (keyup)="handleKeyUp($event, 'blue')"
+      tabindex="0"
+    >
+      <span class="visually-hidden">Blue</span>
+    </button>
+    <button
+      class="button green"
+      (click)="buttonClicked('green')"
+      (keyup)="handleKeyUp($event, 'green')"
+      tabindex="0"
+    >
+      <span class="visually-hidden">Green</span>
+    </button>
+    <button
+      class="button yellow"
+      (click)="buttonClicked('yellow')"
+      (keyup)="handleKeyUp($event, 'yellow')"
+      tabindex="0"
+    >
+      <span class="visually-hidden">Yellow</span>
+    </button>
     <div class="center-circle">
       <button
         (click)="repeatSequence()"

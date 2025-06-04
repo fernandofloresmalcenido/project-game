@@ -8,19 +8,22 @@ import { GameService } from '../../services/game.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './gameplay.component.html',
-  styleUrls: ['./gameplay.component.scss']
+  styleUrls: ['./gameplay.component.scss'],
 })
 export class GameplayComponent implements OnInit {
   buttons = ['red', 'green', 'blue', 'yellow'];
   sequence: string[] = [];
   userSequence: string[] = [];
-  round: number = 0;
-  isPlaying: boolean = false;
-  speed: number = 1000;
-  repeatCount: number = 3;
-  hasUserStarted: boolean = false;
+  round = 0;
+  isPlaying = false;
+  speed = 1000;
+  repeatCount = 3;
+  hasUserStarted = false;
 
-  constructor(private router: Router, private gameService: GameService) { }
+  constructor(
+    private router: Router,
+    private gameService: GameService,
+  ) {}
 
   ngOnInit() {
     this.startGame();
@@ -39,7 +42,7 @@ export class GameplayComponent implements OnInit {
     this.round++;
     this.userSequence = [];
     this.sequence.push(this.buttons[Math.floor(Math.random() * 4)]);
-    this.speed = Math.max(300, 1000 - (this.round * 100));
+    this.speed = Math.max(300, 1000 - this.round * 100);
     this.hasUserStarted = false;
     this.playSequence();
   }
@@ -94,12 +97,20 @@ export class GameplayComponent implements OnInit {
     }
   }
 
+  handleKeyUp(event: KeyboardEvent, color: string) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.buttonClicked(color);
+    }
+  }
+
   checkSequence() {
     const index = this.userSequence.length - 1;
-    let isCorrect : boolean = true;
+    let isCorrect = true;
     if (this.userSequence[index] !== this.sequence[index]) {
       this.gameService.setRecord(this.round - 1);
-      this.router.navigate(['/game-over'], { state: { currentRounds: this.round - 1 } });
+      this.router.navigate(['/game-over'], {
+        state: { currentRounds: this.round - 1 },
+      });
       isCorrect = false;
     }
     if (isCorrect && this.userSequence.length === this.sequence.length) {

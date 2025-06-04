@@ -33,7 +33,9 @@ button {
   color: #1c2439;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.1s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.1s;
   box-shadow: 4px -8px 4px 0px var(--shadow-color);
   display: flex;
   flex-direction: column;

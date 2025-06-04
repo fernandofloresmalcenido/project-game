@@ -7,6 +7,6 @@ import { HomeComponent } from './components/home/home.component';
   standalone: true,
   imports: [RouterOutlet, HomeComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {}

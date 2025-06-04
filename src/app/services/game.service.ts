@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GameService {
-  private record: number = 0;
+  private record = 0;
   private readonly STORAGE_KEY = 'highestRecord';
 
   constructor() {
