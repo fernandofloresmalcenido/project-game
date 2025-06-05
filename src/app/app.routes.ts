@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { HomeComponent } from './components/home/home.component';
-import { GameOverComponent } from './components/game-over/game-over.component';
 
 export const routes: Routes = [
   {
@@ -11,7 +9,8 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    loadComponent: () =>
+      import('./components/home/home.component').then((m) => m.HomeComponent),
     title: 'Simon Says - Home',
   },
   {
@@ -24,7 +23,10 @@ export const routes: Routes = [
   },
   {
     path: 'game-over',
-    component: GameOverComponent,
+    loadComponent: () =>
+      import('./components/game-over/game-over.component').then(
+        (m) => m.GameOverComponent,
+      ),
     title: 'Simon Says - Game Over',
   },
   {
